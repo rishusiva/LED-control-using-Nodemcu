@@ -1,11 +1,16 @@
 #include<ESP8266WebServer.h>  
+#include<ESP8266WiFi.h>
 ESP8266WebServer server;
 const char username[]="rishi";
 const char password[]="rishi2001";
 #define LEDPin1 12
 #define LEDPin2 13
+IPAddress local_IP(192,168,4,22);
+IPAddress gateway(192,168,4,22);
+IPAddress subnet(255,255,255,0);
 void setup()
-{pinMode(LEDPin1,OUTPUT);
+{WiFi.softAPConfig(local_IP,gateway,subnet);
+  pinMode(LEDPin1,OUTPUT);
 pinMode(LEDPin2,OUTPUT);
 digitalWrite(LEDPin1,LOW);
 digitalWrite(LEDPin2,HIGH);
