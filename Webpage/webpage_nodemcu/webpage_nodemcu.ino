@@ -7,6 +7,8 @@ const char password[]="rishi2001";
 void setup()
 {pinMode(LEDPin1,OUTPUT);
 pinMode(LEDPin2,OUTPUT);
+digitalWrite(LEDPin1,LOW);
+digitalWrite(LEDPin2,HIGH);
 Serial.begin(115200);
 
 WiFi.softAP(username,password);//create access point
